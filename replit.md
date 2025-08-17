@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a simplified QR code generator web application with a minimal, clean design. The application allows users to generate QR codes by simply entering text content. It features a single-page interface with essential functionality: text input, QR code generation, and PNG download. The design is inspired by modern minimal interfaces with client-side processing for privacy.
+This is a simplified QR code generator web application with a minimal, clean design. The application allows users to generate QR codes by simply entering text content. It features a single-page interface with essential functionality: text input, real-time QR code generation with animated loading effects, and PNG download. The design is inspired by modern minimal interfaces with client-side processing for privacy. The project is fully configured for deployment on Vercel and other static hosting platforms.
 
 ## User Preferences
 
