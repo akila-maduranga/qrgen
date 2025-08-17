@@ -2,13 +2,34 @@
 
 ## Deploy to Vercel (Recommended)
 
+### IMPORTANT: Fix for White Screen Issue
+
+If you're getting a white screen on Vercel, follow these steps:
+
+1. **Build locally first**:
+   ```bash
+   node build-vercel.js
+   ```
+
+2. **Use the correct vercel.json**:
+   The project includes a `build-vercel.js` script that fixes asset paths for deployment.
+
 ### Method 1: GitHub Integration (Easiest)
 
 1. Push your code to a GitHub repository
 2. Go to [vercel.com](https://vercel.com) and sign in
 3. Click "New Project" and import your GitHub repository
-4. Vercel will automatically detect the configuration and deploy
+4. Vercel will automatically use the `vercel.json` configuration
 5. Your QR code generator will be live at `yourproject.vercel.app`
+
+### Method 2: Manual Upload
+
+1. Build the project locally:
+   ```bash
+   node build-vercel.js
+   ```
+2. Upload the `dist/public` folder contents to Vercel
+3. Configure SPA routing in Vercel dashboard
 
 ### Method 2: Vercel CLI
 
