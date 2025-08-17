@@ -117,3 +117,51 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* QR Code Generation Animation */
+  @keyframes qr-pixel-flash {
+    0%, 100% { 
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% { 
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes scan-line {
+    0% { 
+      top: 0%;
+      opacity: 1;
+    }
+    100% { 
+      top: 100%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .qr-pixel-animate {
+    animation: qr-pixel-flash 1.2s ease-in-out infinite;
+  }
+  
+  .scan-line-animate {
+    animation: scan-line 2s linear infinite;
+  }
+  
+  .fade-in-scale {
+    animation: fade-in-scale 0.6s ease-out forwards;
+  }
+}
