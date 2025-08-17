@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a QR code generator web application built with a modern full-stack architecture. The application allows users to generate QR codes for various content types (URLs, text, email, phone numbers) with customization options for size, colors, and download formats. It features a clean, responsive design using shadcn/ui components and provides real-time QR code generation with client-side processing for privacy.
+This is a simplified QR code generator web application with a minimal, clean design. The application allows users to generate QR codes by simply entering text content. It features a single-page interface with essential functionality: text input, QR code generation, and PNG download. The design is inspired by modern minimal interfaces with client-side processing for privacy.
 
 ## User Preferences
 

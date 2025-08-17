@@ -27,8 +27,8 @@ export default function PreviewPanel({ qrDataUrl, config, isGenerating }: Previe
         if (format === "jpg") {
           // Convert PNG to JPG
           const canvas = document.createElement("canvas");
-          const ctx = canvas.getContext("2d");
-          const img = new Image();
+          const ctx = canvas.getContext("2d")!;
+          const img = document.createElement('img');
           
           img.onload = () => {
             const sizeValue = parseInt(sizeMap[config.size].split("x")[0]);
@@ -36,9 +36,9 @@ export default function PreviewPanel({ qrDataUrl, config, isGenerating }: Previe
             canvas.height = sizeValue;
             
             // Fill with white background for JPG
-            ctx!.fillStyle = config.backgroundColor;
-            ctx!.fillRect(0, 0, sizeValue, sizeValue);
-            ctx!.drawImage(img, 0, 0);
+            ctx.fillStyle = config.backgroundColor;
+            ctx.fillRect(0, 0, sizeValue, sizeValue);
+            ctx.drawImage(img, 0, 0);
             
             link.download = `qrcode.${format}`;
             link.href = canvas.toDataURL(`image/${format}`, 0.9);
@@ -75,17 +75,17 @@ export default function PreviewPanel({ qrDataUrl, config, isGenerating }: Previe
         // For PDF, we'll use the canvas approach and convert to PDF-like format
         // This is a simplified approach - in a real app you might want to use jsPDF
         const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        const img = new Image();
+        const ctx = canvas.getContext("2d")!;
+        const img = document.createElement('img');
         
         img.onload = () => {
           const sizeValue = parseInt(sizeMap[config.size].split("x")[0]);
           canvas.width = sizeValue;
           canvas.height = sizeValue;
           
-          ctx!.fillStyle = config.backgroundColor;
-          ctx!.fillRect(0, 0, sizeValue, sizeValue);
-          ctx!.drawImage(img, 0, 0);
+          ctx.fillStyle = config.backgroundColor;
+          ctx.fillRect(0, 0, sizeValue, sizeValue);
+          ctx.drawImage(img, 0, 0);
           
           // Create a simple "PDF" (actually a high-quality PNG)
           const link = document.createElement("a");
